@@ -159,10 +159,15 @@ footer a:hover{color:var(--blanc)}
 /* reveal */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
+/* la lumière s'allume : les photos passent de la pénombre au plein éclairage */
+.hero-photo img,.r-photo img,.dep-photo img{filter:brightness(.28) saturate(.55);transition:filter 1.4s cubic-bezier(.3,.6,.2,1) .2s,transform .6s ease}
+.reveal.in img{filter:brightness(1) saturate(1)}
+.reveal.in .r-photo,.hero-photo.in{transition:box-shadow 1.4s ease .2s}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
   .btn,.r-photo img,.burger span{transition:none}
+  .hero-photo img,.r-photo img,.dep-photo img{filter:none;transition:none}
 }
 
 /* responsive */
